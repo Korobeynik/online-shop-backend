@@ -1523,14 +1523,14 @@ export namespace Prisma {
    */
 
   export type UserCountOutputType = {
-    store: number
+    stores: number
     favorites: number
     reviews: number
     orders: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    store?: boolean | UserCountOutputTypeCountStoreArgs
+    stores?: boolean | UserCountOutputTypeCountStoresArgs
     favorites?: boolean | UserCountOutputTypeCountFavoritesArgs
     reviews?: boolean | UserCountOutputTypeCountReviewsArgs
     orders?: boolean | UserCountOutputTypeCountOrdersArgs
@@ -1550,7 +1550,7 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountStoreArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserCountOutputTypeCountStoresArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: StoreWhereInput
   }
 
@@ -1969,7 +1969,7 @@ export namespace Prisma {
     password?: boolean
     name?: boolean
     pictures?: boolean
-    store?: boolean | User$storeArgs<ExtArgs>
+    stores?: boolean | User$storesArgs<ExtArgs>
     favorites?: boolean | User$favoritesArgs<ExtArgs>
     reviews?: boolean | User$reviewsArgs<ExtArgs>
     orders?: boolean | User$ordersArgs<ExtArgs>
@@ -2008,7 +2008,7 @@ export namespace Prisma {
 
   export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "email" | "password" | "name" | "pictures", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    store?: boolean | User$storeArgs<ExtArgs>
+    stores?: boolean | User$storesArgs<ExtArgs>
     favorites?: boolean | User$favoritesArgs<ExtArgs>
     reviews?: boolean | User$reviewsArgs<ExtArgs>
     orders?: boolean | User$ordersArgs<ExtArgs>
@@ -2020,7 +2020,7 @@ export namespace Prisma {
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
     objects: {
-      store: Prisma.$StorePayload<ExtArgs>[]
+      stores: Prisma.$StorePayload<ExtArgs>[]
       favorites: Prisma.$ProductPayload<ExtArgs>[]
       reviews: Prisma.$ReviewPayload<ExtArgs>[]
       orders: Prisma.$OrderPayload<ExtArgs>[]
@@ -2427,7 +2427,7 @@ export namespace Prisma {
    */
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    store<T extends User$storeArgs<ExtArgs> = {}>(args?: Subset<T, User$storeArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$StorePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    stores<T extends User$storesArgs<ExtArgs> = {}>(args?: Subset<T, User$storesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$StorePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     favorites<T extends User$favoritesArgs<ExtArgs> = {}>(args?: Subset<T, User$favoritesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     reviews<T extends User$reviewsArgs<ExtArgs> = {}>(args?: Subset<T, User$reviewsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     orders<T extends User$ordersArgs<ExtArgs> = {}>(args?: Subset<T, User$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -2855,9 +2855,9 @@ export namespace Prisma {
   }
 
   /**
-   * User.store
+   * User.stores
    */
-  export type User$storeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$storesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Store
      */
@@ -11633,7 +11633,7 @@ export namespace Prisma {
     password?: StringNullableFilter<"User"> | string | null
     name?: StringFilter<"User"> | string
     pictures?: StringFilter<"User"> | string
-    store?: StoreListRelationFilter
+    stores?: StoreListRelationFilter
     favorites?: ProductListRelationFilter
     reviews?: ReviewListRelationFilter
     orders?: OrderListRelationFilter
@@ -11647,7 +11647,7 @@ export namespace Prisma {
     password?: SortOrderInput | SortOrder
     name?: SortOrder
     pictures?: SortOrder
-    store?: StoreOrderByRelationAggregateInput
+    stores?: StoreOrderByRelationAggregateInput
     favorites?: ProductOrderByRelationAggregateInput
     reviews?: ReviewOrderByRelationAggregateInput
     orders?: OrderOrderByRelationAggregateInput
@@ -11664,7 +11664,7 @@ export namespace Prisma {
     password?: StringNullableFilter<"User"> | string | null
     name?: StringFilter<"User"> | string
     pictures?: StringFilter<"User"> | string
-    store?: StoreListRelationFilter
+    stores?: StoreListRelationFilter
     favorites?: ProductListRelationFilter
     reviews?: ReviewListRelationFilter
     orders?: OrderListRelationFilter
@@ -12239,7 +12239,7 @@ export namespace Prisma {
     password?: string | null
     name?: string
     pictures?: string
-    store?: StoreCreateNestedManyWithoutUserInput
+    stores?: StoreCreateNestedManyWithoutUserInput
     favorites?: ProductCreateNestedManyWithoutUserInput
     reviews?: ReviewCreateNestedManyWithoutUserInput
     orders?: OrderCreateNestedManyWithoutUserInput
@@ -12253,7 +12253,7 @@ export namespace Prisma {
     password?: string | null
     name?: string
     pictures?: string
-    store?: StoreUncheckedCreateNestedManyWithoutUserInput
+    stores?: StoreUncheckedCreateNestedManyWithoutUserInput
     favorites?: ProductUncheckedCreateNestedManyWithoutUserInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutUserInput
     orders?: OrderUncheckedCreateNestedManyWithoutUserInput
@@ -12267,7 +12267,7 @@ export namespace Prisma {
     password?: NullableStringFieldUpdateOperationsInput | string | null
     name?: StringFieldUpdateOperationsInput | string
     pictures?: StringFieldUpdateOperationsInput | string
-    store?: StoreUpdateManyWithoutUserNestedInput
+    stores?: StoreUpdateManyWithoutUserNestedInput
     favorites?: ProductUpdateManyWithoutUserNestedInput
     reviews?: ReviewUpdateManyWithoutUserNestedInput
     orders?: OrderUpdateManyWithoutUserNestedInput
@@ -12281,7 +12281,7 @@ export namespace Prisma {
     password?: NullableStringFieldUpdateOperationsInput | string | null
     name?: StringFieldUpdateOperationsInput | string
     pictures?: StringFieldUpdateOperationsInput | string
-    store?: StoreUncheckedUpdateManyWithoutUserNestedInput
+    stores?: StoreUncheckedUpdateManyWithoutUserNestedInput
     favorites?: ProductUncheckedUpdateManyWithoutUserNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutUserNestedInput
     orders?: OrderUncheckedUpdateManyWithoutUserNestedInput
@@ -12323,7 +12323,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     title: string
     description?: string | null
-    user?: UserCreateNestedOneWithoutStoreInput
+    user?: UserCreateNestedOneWithoutStoresInput
     products?: ProductCreateNestedManyWithoutStoreInput
     categories?: CategoryCreateNestedManyWithoutStoreInput
     colors?: ColorCreateNestedManyWithoutStoreInput
@@ -12351,7 +12351,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    user?: UserUpdateOneWithoutStoreNestedInput
+    user?: UserUpdateOneWithoutStoresNestedInput
     products?: ProductUpdateManyWithoutStoreNestedInput
     categories?: CategoryUpdateManyWithoutStoreNestedInput
     colors?: ColorUpdateManyWithoutStoreNestedInput
@@ -13566,9 +13566,9 @@ export namespace Prisma {
     deleteMany?: OrderScalarWhereInput | OrderScalarWhereInput[]
   }
 
-  export type UserCreateNestedOneWithoutStoreInput = {
-    create?: XOR<UserCreateWithoutStoreInput, UserUncheckedCreateWithoutStoreInput>
-    connectOrCreate?: UserCreateOrConnectWithoutStoreInput
+  export type UserCreateNestedOneWithoutStoresInput = {
+    create?: XOR<UserCreateWithoutStoresInput, UserUncheckedCreateWithoutStoresInput>
+    connectOrCreate?: UserCreateOrConnectWithoutStoresInput
     connect?: UserWhereUniqueInput
   }
 
@@ -13642,14 +13642,14 @@ export namespace Prisma {
     connect?: OrderItemWhereUniqueInput | OrderItemWhereUniqueInput[]
   }
 
-  export type UserUpdateOneWithoutStoreNestedInput = {
-    create?: XOR<UserCreateWithoutStoreInput, UserUncheckedCreateWithoutStoreInput>
-    connectOrCreate?: UserCreateOrConnectWithoutStoreInput
-    upsert?: UserUpsertWithoutStoreInput
+  export type UserUpdateOneWithoutStoresNestedInput = {
+    create?: XOR<UserCreateWithoutStoresInput, UserUncheckedCreateWithoutStoresInput>
+    connectOrCreate?: UserCreateOrConnectWithoutStoresInput
+    upsert?: UserUpsertWithoutStoresInput
     disconnect?: UserWhereInput | boolean
     delete?: UserWhereInput | boolean
     connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutStoreInput, UserUpdateWithoutStoreInput>, UserUncheckedUpdateWithoutStoreInput>
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutStoresInput, UserUpdateWithoutStoresInput>, UserUncheckedUpdateWithoutStoresInput>
   }
 
   export type ProductUpdateManyWithoutStoreNestedInput = {
@@ -14700,7 +14700,7 @@ export namespace Prisma {
     productId?: StringNullableFilter<"Order"> | string | null
   }
 
-  export type UserCreateWithoutStoreInput = {
+  export type UserCreateWithoutStoresInput = {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -14713,7 +14713,7 @@ export namespace Prisma {
     orders?: OrderCreateNestedManyWithoutUserInput
   }
 
-  export type UserUncheckedCreateWithoutStoreInput = {
+  export type UserUncheckedCreateWithoutStoresInput = {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -14726,9 +14726,9 @@ export namespace Prisma {
     orders?: OrderUncheckedCreateNestedManyWithoutUserInput
   }
 
-  export type UserCreateOrConnectWithoutStoreInput = {
+  export type UserCreateOrConnectWithoutStoresInput = {
     where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutStoreInput, UserUncheckedCreateWithoutStoreInput>
+    create: XOR<UserCreateWithoutStoresInput, UserUncheckedCreateWithoutStoresInput>
   }
 
   export type ProductCreateWithoutStoreInput = {
@@ -14889,18 +14889,18 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type UserUpsertWithoutStoreInput = {
-    update: XOR<UserUpdateWithoutStoreInput, UserUncheckedUpdateWithoutStoreInput>
-    create: XOR<UserCreateWithoutStoreInput, UserUncheckedCreateWithoutStoreInput>
+  export type UserUpsertWithoutStoresInput = {
+    update: XOR<UserUpdateWithoutStoresInput, UserUncheckedUpdateWithoutStoresInput>
+    create: XOR<UserCreateWithoutStoresInput, UserUncheckedCreateWithoutStoresInput>
     where?: UserWhereInput
   }
 
-  export type UserUpdateToOneWithWhereWithoutStoreInput = {
+  export type UserUpdateToOneWithWhereWithoutStoresInput = {
     where?: UserWhereInput
-    data: XOR<UserUpdateWithoutStoreInput, UserUncheckedUpdateWithoutStoreInput>
+    data: XOR<UserUpdateWithoutStoresInput, UserUncheckedUpdateWithoutStoresInput>
   }
 
-  export type UserUpdateWithoutStoreInput = {
+  export type UserUpdateWithoutStoresInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -14913,7 +14913,7 @@ export namespace Prisma {
     orders?: OrderUpdateManyWithoutUserNestedInput
   }
 
-  export type UserUncheckedUpdateWithoutStoreInput = {
+  export type UserUncheckedUpdateWithoutStoresInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -15110,7 +15110,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     title: string
     description?: string | null
-    user?: UserCreateNestedOneWithoutStoreInput
+    user?: UserCreateNestedOneWithoutStoresInput
     categories?: CategoryCreateNestedManyWithoutStoreInput
     colors?: ColorCreateNestedManyWithoutStoreInput
     reviews?: ReviewCreateNestedManyWithoutStoreInput
@@ -15189,7 +15189,7 @@ export namespace Prisma {
     password?: string | null
     name?: string
     pictures?: string
-    store?: StoreCreateNestedManyWithoutUserInput
+    stores?: StoreCreateNestedManyWithoutUserInput
     reviews?: ReviewCreateNestedManyWithoutUserInput
     orders?: OrderCreateNestedManyWithoutUserInput
   }
@@ -15202,7 +15202,7 @@ export namespace Prisma {
     password?: string | null
     name?: string
     pictures?: string
-    store?: StoreUncheckedCreateNestedManyWithoutUserInput
+    stores?: StoreUncheckedCreateNestedManyWithoutUserInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutUserInput
     orders?: OrderUncheckedCreateNestedManyWithoutUserInput
   }
@@ -15291,7 +15291,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    user?: UserUpdateOneWithoutStoreNestedInput
+    user?: UserUpdateOneWithoutStoresNestedInput
     categories?: CategoryUpdateManyWithoutStoreNestedInput
     colors?: ColorUpdateManyWithoutStoreNestedInput
     reviews?: ReviewUpdateManyWithoutStoreNestedInput
@@ -15388,7 +15388,7 @@ export namespace Prisma {
     password?: NullableStringFieldUpdateOperationsInput | string | null
     name?: StringFieldUpdateOperationsInput | string
     pictures?: StringFieldUpdateOperationsInput | string
-    store?: StoreUpdateManyWithoutUserNestedInput
+    stores?: StoreUpdateManyWithoutUserNestedInput
     reviews?: ReviewUpdateManyWithoutUserNestedInput
     orders?: OrderUpdateManyWithoutUserNestedInput
   }
@@ -15401,7 +15401,7 @@ export namespace Prisma {
     password?: NullableStringFieldUpdateOperationsInput | string | null
     name?: StringFieldUpdateOperationsInput | string
     pictures?: StringFieldUpdateOperationsInput | string
-    store?: StoreUncheckedUpdateManyWithoutUserNestedInput
+    stores?: StoreUncheckedUpdateManyWithoutUserNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutUserNestedInput
     orders?: OrderUncheckedUpdateManyWithoutUserNestedInput
   }
@@ -15470,7 +15470,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     title: string
     description?: string | null
-    user?: UserCreateNestedOneWithoutStoreInput
+    user?: UserCreateNestedOneWithoutStoresInput
     products?: ProductCreateNestedManyWithoutStoreInput
     colors?: ColorCreateNestedManyWithoutStoreInput
     reviews?: ReviewCreateNestedManyWithoutStoreInput
@@ -15528,7 +15528,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    user?: UserUpdateOneWithoutStoreNestedInput
+    user?: UserUpdateOneWithoutStoresNestedInput
     products?: ProductUpdateManyWithoutStoreNestedInput
     colors?: ColorUpdateManyWithoutStoreNestedInput
     reviews?: ReviewUpdateManyWithoutStoreNestedInput
@@ -15596,7 +15596,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     title: string
     description?: string | null
-    user?: UserCreateNestedOneWithoutStoreInput
+    user?: UserCreateNestedOneWithoutStoresInput
     products?: ProductCreateNestedManyWithoutStoreInput
     categories?: CategoryCreateNestedManyWithoutStoreInput
     reviews?: ReviewCreateNestedManyWithoutStoreInput
@@ -15654,7 +15654,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    user?: UserUpdateOneWithoutStoreNestedInput
+    user?: UserUpdateOneWithoutStoresNestedInput
     products?: ProductUpdateManyWithoutStoreNestedInput
     categories?: CategoryUpdateManyWithoutStoreNestedInput
     reviews?: ReviewUpdateManyWithoutStoreNestedInput
@@ -15682,7 +15682,7 @@ export namespace Prisma {
     password?: string | null
     name?: string
     pictures?: string
-    store?: StoreCreateNestedManyWithoutUserInput
+    stores?: StoreCreateNestedManyWithoutUserInput
     favorites?: ProductCreateNestedManyWithoutUserInput
     orders?: OrderCreateNestedManyWithoutUserInput
   }
@@ -15695,7 +15695,7 @@ export namespace Prisma {
     password?: string | null
     name?: string
     pictures?: string
-    store?: StoreUncheckedCreateNestedManyWithoutUserInput
+    stores?: StoreUncheckedCreateNestedManyWithoutUserInput
     favorites?: ProductUncheckedCreateNestedManyWithoutUserInput
     orders?: OrderUncheckedCreateNestedManyWithoutUserInput
   }
@@ -15711,7 +15711,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     title: string
     description?: string | null
-    user?: UserCreateNestedOneWithoutStoreInput
+    user?: UserCreateNestedOneWithoutStoresInput
     products?: ProductCreateNestedManyWithoutStoreInput
     categories?: CategoryCreateNestedManyWithoutStoreInput
     colors?: ColorCreateNestedManyWithoutStoreInput
@@ -15792,7 +15792,7 @@ export namespace Prisma {
     password?: NullableStringFieldUpdateOperationsInput | string | null
     name?: StringFieldUpdateOperationsInput | string
     pictures?: StringFieldUpdateOperationsInput | string
-    store?: StoreUpdateManyWithoutUserNestedInput
+    stores?: StoreUpdateManyWithoutUserNestedInput
     favorites?: ProductUpdateManyWithoutUserNestedInput
     orders?: OrderUpdateManyWithoutUserNestedInput
   }
@@ -15805,7 +15805,7 @@ export namespace Prisma {
     password?: NullableStringFieldUpdateOperationsInput | string | null
     name?: StringFieldUpdateOperationsInput | string
     pictures?: StringFieldUpdateOperationsInput | string
-    store?: StoreUncheckedUpdateManyWithoutUserNestedInput
+    stores?: StoreUncheckedUpdateManyWithoutUserNestedInput
     favorites?: ProductUncheckedUpdateManyWithoutUserNestedInput
     orders?: OrderUncheckedUpdateManyWithoutUserNestedInput
   }
@@ -15827,7 +15827,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    user?: UserUpdateOneWithoutStoreNestedInput
+    user?: UserUpdateOneWithoutStoresNestedInput
     products?: ProductUpdateManyWithoutStoreNestedInput
     categories?: CategoryUpdateManyWithoutStoreNestedInput
     colors?: ColorUpdateManyWithoutStoreNestedInput
@@ -15928,7 +15928,7 @@ export namespace Prisma {
     password?: string | null
     name?: string
     pictures?: string
-    store?: StoreCreateNestedManyWithoutUserInput
+    stores?: StoreCreateNestedManyWithoutUserInput
     favorites?: ProductCreateNestedManyWithoutUserInput
     reviews?: ReviewCreateNestedManyWithoutUserInput
   }
@@ -15941,7 +15941,7 @@ export namespace Prisma {
     password?: string | null
     name?: string
     pictures?: string
-    store?: StoreUncheckedCreateNestedManyWithoutUserInput
+    stores?: StoreUncheckedCreateNestedManyWithoutUserInput
     favorites?: ProductUncheckedCreateNestedManyWithoutUserInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutUserInput
   }
@@ -16023,7 +16023,7 @@ export namespace Prisma {
     password?: NullableStringFieldUpdateOperationsInput | string | null
     name?: StringFieldUpdateOperationsInput | string
     pictures?: StringFieldUpdateOperationsInput | string
-    store?: StoreUpdateManyWithoutUserNestedInput
+    stores?: StoreUpdateManyWithoutUserNestedInput
     favorites?: ProductUpdateManyWithoutUserNestedInput
     reviews?: ReviewUpdateManyWithoutUserNestedInput
   }
@@ -16036,7 +16036,7 @@ export namespace Prisma {
     password?: NullableStringFieldUpdateOperationsInput | string | null
     name?: StringFieldUpdateOperationsInput | string
     pictures?: StringFieldUpdateOperationsInput | string
-    store?: StoreUncheckedUpdateManyWithoutUserNestedInput
+    stores?: StoreUncheckedUpdateManyWithoutUserNestedInput
     favorites?: ProductUncheckedUpdateManyWithoutUserNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutUserNestedInput
   }
@@ -16152,7 +16152,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     title: string
     description?: string | null
-    user?: UserCreateNestedOneWithoutStoreInput
+    user?: UserCreateNestedOneWithoutStoresInput
     products?: ProductCreateNestedManyWithoutStoreInput
     categories?: CategoryCreateNestedManyWithoutStoreInput
     colors?: ColorCreateNestedManyWithoutStoreInput
@@ -16268,7 +16268,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    user?: UserUpdateOneWithoutStoreNestedInput
+    user?: UserUpdateOneWithoutStoresNestedInput
     products?: ProductUpdateManyWithoutStoreNestedInput
     categories?: CategoryUpdateManyWithoutStoreNestedInput
     colors?: ColorUpdateManyWithoutStoreNestedInput
