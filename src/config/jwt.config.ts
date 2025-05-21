@@ -1,9 +1,11 @@
 import { ConfigService } from '@nestjs/config';
 import { JwtModuleOptions } from '@nestjs/jwt';
 
-export const getJwtConfig = async (
+export const getJwtConfig = (
   configService: ConfigService,
-  // eslint-disable-next-line @typescript-eslint/require-await
-): Promise<JwtModuleOptions> => ({
-  secret: configService.get<string>('JWT_SECRET'),
+): JwtModuleOptions => ({
+  secret: configService.get<string>('JWT_SECRET') || 'default_secret_key',
+  signOptions: {
+    expiresIn: '1d',
+  },
 });

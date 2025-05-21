@@ -5,7 +5,6 @@ import {
   IsString,
   MinLength,
 } from 'class-validator';
-
 export class AuthDto {
   @IsOptional()
   @IsString()
@@ -15,9 +14,8 @@ export class AuthDto {
   @IsEmail({}, { message: 'Invalid email format' })
   email: string;
 
-  @IsString({
-    message: 'Password is required',
-  })
+  @IsNotEmpty({ message: 'Password is required' })
+  @IsString()
   @MinLength(6, { message: 'Password must be at least 6 characters' })
   password: string;
 }
