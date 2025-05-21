@@ -69,7 +69,9 @@ export class AuthService {
   }
 
   async validateOauthLogin(reg: any) {
-    let user = await this.userService.getByEmail(reg.email);
+    //let user = await this.userService.getByEmail(reg.email);
+    let user = await this.userService.getByEmail(reg.user.email);
+
     if (!user) {
       user = await this.prisma.user.create({
         data: {
